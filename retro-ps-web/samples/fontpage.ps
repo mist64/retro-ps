@@ -1,0 +1,284 @@
+%!
+% FONTPAGE
+
+/D{def}def
+
+/ED{exch D}D
+
+/GS{gsave}D
+
+/GR{grestore}D
+
+statusdict begin
+
+0 setjobtimeout
+
+
+(HP LaserJet IID) product eq (HP LaserJet IIID) product eq or
+
+{/resetduplextrue false def
+
+duplexmode
+
+{ /resetduplextrue true def
+
+false setduplexmode
+
+} if
+
+} if
+
+clippath stroke
+
+clippath pathbbox
+
+3 1 roll exch sub
+
+589.68 div dup scale
+
+
+/fontsize 11 def
+
+/fontspace fontsize 1.2 mul def
+
+
+/titlef1 {/Helvetica-Bold findfont 12 scalefont setfont} def
+
+/titlef2 {/Helvetica-Bold findfont 9 scalefont setfont} def
+
+/titlef3 {/Helvetica-Bold findfont 7 scalefont setfont} def
+
+/mf {/Helvetica findfont fontsize scalefont setfont} def
+
+/sf {/Helvetica findfont fontsize .78 mul scalefont setfont} def
+
+/text {(ABCDEabcde012345[]*%#!?`") show} def
+
+/y 734 def
+
+/x1 288 def
+
+/x2 x1 20 add def
+
+/newline {/y y fontspace sub def x1 y moveto} def
+
+/ff {findfont fontsize scalefont setfont text newline} def
+
+/rj {dup stringwidth pop 0 exch sub 0 rmoveto show 20 0 rmoveto} def
+
+/rjaster {lm 0 exch sub 0 rmoveto} def
+
+/astr {show sf 0 3 rmoveto (*) show mf 0 -3 rmoveto} def
+
+
+x1 x2 add 2 div y moveto
+
+titlef1
+
+(FONT PAGE) 
+
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto 
+
+show newline x1 x2 add 2 div y moveto
+
+
+titlef2
+
+product 
+
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto
+
+( printer)
+
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto
+
+product show 
+
+( printer) show newline x1 x2 add 2 div y moveto
+
+
+(PostScript* cartridge) 
+
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto
+
+(PostScript)
+
+show titlef3 0 3 rmoveto (*) show titlef2 0 -3 rmoveto
+
+( cartridge) show newline newline newline
+
+
+x1 y moveto
+
+/lm mf (ITC Avant Garde Gothic) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+/lm lm mf ( Book) stringwidth pop add def
+
+rjaster mf (ITC Avant Garde Gothic) astr ( Book) show
+
+20 0 rmoveto /AvantGarde-Book ff
+
+mf (ITC Avant Garde Gothic Book Oblique) rj /AvantGarde-BookOblique ff
+
+mf (ITC Avant Garde Gothic Demi) rj /AvantGarde-Demi ff
+
+mf (ITC Avant Garde Gothic Demi Oblique) rj /AvantGarde-DemiOblique ff
+
+newline
+
+/lm mf (ITC Bookman) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+/lm lm mf ( Demi) stringwidth pop add def
+
+rjaster mf (ITC Bookman) astr ( Demi) show 20 0 rmoveto /Bookman-Demi ff
+
+mf (ITC Bookman Demi Italic) rj /Bookman-DemiItalic ff
+
+mf (ITC Bookman Light) rj /Bookman-Light ff
+
+mf (ITC Bookman Light Italic) rj /Bookman-LightItalic ff
+
+newline
+
+mf (Courier) rj /Courier ff
+
+mf (Courier Bold) rj /Courier-Bold ff
+
+mf (Courier Bold Oblique) rj /Courier-BoldOblique ff
+
+mf (Courier Oblique) rj /Courier-Oblique ff
+
+newline
+
+/lm mf (Helvetica) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+rjaster mf (Helvetica) astr 20 0 rmoveto /Helvetica ff
+
+mf (Helvetica Bold) rj /Helvetica-Bold ff
+
+mf (Helvetica Bold Oblique) rj /Helvetica-BoldOblique ff
+
+mf (Helvetica Oblique) rj /Helvetica-Oblique ff
+
+newline
+
+mf (Helvetica Narrow) rj /Helvetica-Narrow ff
+
+mf (Helvetica Narrow Bold) rj /Helvetica-Narrow-Bold ff
+
+mf (Helvetica Narrow Bold Oblique) rj /Helvetica-Narrow-BoldOblique ff
+
+mf (Helvetica Narrow Oblique) rj /Helvetica-Narrow-Oblique ff
+
+newline
+
+mf (New Century Schoolbook Bold) rj /NewCenturySchlbk-Bold ff
+
+mf (New Century Schoolbook Bold Italic) rj /NewCenturySchlbk-BoldItalic ff
+
+mf (New Century Schoolbook Italic) rj /NewCenturySchlbk-Italic ff
+
+mf (New Century Schoolbook Roman) rj /NewCenturySchlbk-Roman ff
+
+newline
+
+/lm mf (Palatino) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+rjaster mf (Palatino) astr 20 0 rmoveto /Palatino-Roman ff
+
+mf (Palatino Bold) rj /Palatino-Bold ff
+
+mf (Palatino Bold Italic) rj /Palatino-BoldItalic ff
+
+mf (Palatino Italic) rj /Palatino-Italic ff
+
+newline
+
+mf (Symbol) rj /Symbol ff
+
+newline
+
+mf (Times Bold) rj /Times-Bold ff
+
+mf (Times Bold Italic) rj /Times-BoldItalic ff
+
+mf (Times Italic) rj /Times-Italic ff
+
+/lm mf (Times Roman) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+rjaster mf (Times Roman) astr 20 0 rmoveto /Times-Roman ff
+
+newline
+
+/lm mf (ITC Zapf Chancery) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+/lm lm mf ( Medium Italic) stringwidth pop add def
+
+rjaster mf (ITC Zapf Chancery) astr ( Medium Italic) show 
+
+20 0 rmoveto /ZapfChancery-MediumItalic ff
+
+newline
+
+/lm mf (ITC Zapf Dingbats) stringwidth pop def
+
+/lm lm sf (*) stringwidth pop add def
+
+rjaster mf (ITC Zapf Dingbats) astr 20 0 rmoveto /ZapfDingbats ff
+
+/Helvetica findfont 5.5 scalefont setfont
+
+/y 50 def
+
+x2 3 sub y moveto
+
+0 2 rmoveto (*) show 0 -2 rmoveto
+
+(PostScript is a registered trademark of Adobe Systems Incorporated in the U.S.
+
+and other countries. Helvetica,) show
+
+/y y 7 sub def
+
+x2 y moveto
+
+(Palatino and Times Roman are registered trademarks of Linotype
+
+AG and/or its subsidiaries in the U.S. and other) show
+
+/y y 7 sub def
+
+x2 y moveto
+
+(countries. ITC Avant Garde Gothic, ITC Bookman, ITC Zapf Chancery
+
+and ITC Zapf Dingbats are registered) show
+
+/y y 7 sub def
+
+x2 y moveto 
+
+(trademarks of International Typeface Corporation in the U.S. and
+
+other countries.) show
+
+showpage
+
+
+(HP LaserJet IID) product eq (HP LaserJet IIID) product eq or
+
+{resetduplextrue setduplexmode} if
+
+

@@ -1,0 +1,13 @@
+[package]
+name = "retro-ps-cli"
+version = "0.1.0"
+edition.workspace = true
+description = "CLI front-end for the retro-ps cart emulator"
+
+[[bin]]
+name = "retro-ps"
+path = "src/main.rs"
+
+[dependencies]
+retro-ps-c2089a = { path = "../retro-ps-c2089a" }
+clap = { version = "4", features = ["derive"] }

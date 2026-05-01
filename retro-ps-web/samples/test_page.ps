@@ -1,0 +1,303 @@
+%!
+% TEST PAGE
+statusdict begin
+/oldjt jobtimeout def
+0 setjobtimeout
+/D{def}def
+/ED{exch D}D
+/GS{gsave}D
+/GR{grestore}D
+/printeris product def
+/minpagewidth 6.5 def
+(HP LaserJet IID) product eq (HP LaserJet IIID) product eq or
+{/resetduplextrue false def
+duplexmode
+{ /resetduplextrue true def
+false setduplexmode
+} if
+} if
+clippath pathbbox pop pop translate 
+clippath pathbbox pop exch pop sub -72 div 
+minpagewidth 
+lt
+{ 
+clippath pathbbox exch 3 1 
+roll pop pop 
+sub -72 div 8.5 div dup 
+scale
+} if
+/y 725 def
+/x 280 def
+.7 setlinewidth
+/rj {dup stringwidth pop 0 exch sub 0 rmoveto show 12 0 rmoveto} def
+/rjul {dup stringwidth pop 0 exch sub /x1 exch def 
+-25 0 rmoveto x1 0 rlineto 0 5 rmoveto show stroke
+} def
+/cr {/y y 13.5 sub def x y moveto
+} def
+/tf {
+{( (on)) show} 
+{( (off)) show} ifelse
+} def
+/titlef {/Helvetica-Bold findfont 12 scalefont setfont} def
+/mf {/Helvetica-Bold findfont 9 scalefont setfont} def
+/sf {/Helvetica-Bold findfont 7 scalefont setfont} def
+/str 32 string def
+/sho {str cvs show} def
+x y moveto
+titlef
+(TEST PAGE) 
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto 
+show cr
+mf
+printeris 
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto
+( printer)
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto
+printeris show 
+( printer) show cr
+(Level 2 PostScript* Cartridge Plus) 
+dup stringwidth pop 2 div 0 exch sub 0 rmoveto
+(Level 2 PostScript)
+show sf 0 3 rmoveto (*) show mf 0 -3 rmoveto
+( Cartridge Plus) show cr
+/y 665 def 
+x y moveto
+0 5 rmoveto
+(OPERATOR/VARIABLE ) rj (PERSISTENT VALUE) show cr
+/Helvetica findfont 9 scalefont setfont
+(SYSTEM SETUP OPERATORS) rjul cr 
+(Password: ) rj 0 checkpassword
+{(0) show} {(not default value) show} 
+ifelse 
+cr
+(Jam Recovery: ) rj currentpagedevice /ExitJamRecovery get dup sho tf cr
+(Auto Continue: ) rj doautocontinue  dup sho tf cr
+(Print Errors: ) rj doprinterrors  dup sho tf cr
+(HP LaserJet III) printeris eq (HP LaserJet IIID) printeris eq or
+(HP LaserJet IIIP) printeris eq or
+{(RET: ) rj
+currentpagedevice /PostRenderingEnhanceDetails get /REValue get dup sho 
+dup 0 eq {( (Off))} if
+dup 1 eq {( (Light))}if
+dup 2 eq {( (Medium))}if
+dup 3 eq {( (Dark))} if
+show cr pop} if
+(Start Page: ) rj dostartpage dup sho tf cr
+(Left Margin: ) rj margins sho ( (1/300 inch increments)) show cr
+(Top Margin: ) rj margins pop sho ( (1/300 inch increments)) show cr
+(PostScript Page Count: ) rj pagecount sho cr
+(HP LaserJet IID) printeris eq (HP LaserJet IIID) printeris eq or
+{(Page Stack Order: ) rj pagestackorder dup sho 
+{( (face-down))}{( (face-up))} ifelse show cr} if
+(Optional Memory Installed: ) rj
+currentsystemparams /RamSize get 
+1048576 div 1 sub dup sho 
+( Megabyte) show 1 gt {(s) show} if cr
+save 
+true setglobal 
+vmstatus exch pop exch pop
+(Global Virtual Memory: ) rj sho ( (maximum available)) sho cr
+false setglobal 
+vmstatus exch pop exch pop
+(Local Virtual Memory: ) rj sho ( (maximum available)) sho 
+restore cr cr 
+(Maximum Size of Font Cache: ) rj currentsystemparams /MaxFontCache get dup sho cr
+(Current Size of Font Cache: ) rj currentsystemparams /CurFontCache get dup sho cr
+(Printer Name: ) rj str printername sho cr
+(Product Name: ) rj printeris sho cr
+(PostScript Code Version: ) rj version sho cr
+(Device Specific Revision: ) rj revision sho cr
+(Active Communications Channel: ) rj currentsystemparams /CurInputDevice get dup sho cr
+cr 
+(TIMEOUT OPERATORS) rjul cr
+(Job Timeout: ) rj oldjt dup sho 
+0 eq {( (no time limit)) show} {( (seconds)) show} ifelse cr
+(Manual Feed Timeout: ) rj currentpagedevice /ManualFeedTimeout get dup sho 
+0 eq {( (no time limit)) show} {( (seconds)) show} ifelse cr
+(Wait Timeout: ) rj waittimeout dup sho 
+0 eq {( (no time limit)) show} {( (seconds)) show} ifelse cr
+cr 
+printeris (HP LaserJet IID) eq printeris (HP LaserJet IIID) eq or
+{(DUPLEX OPERATORS) rjul cr
+(Duplex Mode: ) rj resetduplextrue dup sho tf cr
+(Tumble Mode: ) rj defaulttumble dup sho
+{( (bind short edge)) show} {( (bind long edge)) show} ifelse cr
+cr} if
+printeris (HP LaserJet IIID) eq printeris (HP LaserJet IID) eq or
+printeris (HP LaserJet IIP) eq or printeris (HP LaserJet IIIP) eq or
+{(TRAY SELECTION OPERATORS) rjul cr
+(Paper Tray: ) rj defaultpapertray
+dup 0 eq {	printeris (HP LaserJet IIP) eq
+printeris (HP LaserJet IIIP) eq or {(0 (mp tray))}
+{(0 (upper tray))} ifelse } if
+dup 1 eq {(1 (lower tray))  } if
+dup 2 eq {(2 (envelope feeder))  } if
+show pop cr
+(Tray Switch: ) rj currentpagedevice /TraySwitch get dup sho tf cr 
+} if
+x 12 add 19 moveto
+/Helvetica findfont 6 scalefont setfont 
+0 2 rmoveto (*) show 0 -2 rmoveto 
+(PostScript is a registered trademark of Adobe Systems Incorporated) show
+x 15 add 13 moveto
+(in the U.S. and other countries.) show
+gsave
+.24 .24 scale
+1200 475 translate
+/thickline 3 def
+/medline 2 def
+/thinline 0 def
+newpath
+0 0 moveto
+0 0 300 180 300 arc closepath
+gsave
+clip
+/xstart -300 def
+/xfinish 180 def
+/ystart -300 def
+/yfinish 0 def
+thinline setlinewidth
+newpath
+ystart 5 yfinish{
+xstart exch moveto
+xstart 60 xfinish{
+pop
+30 0 rlineto
+1 1 rmoveto
+30 0 rlineto
+1 -1 rmoveto
+} for
+stroke
+} for
+grestore
+thickline setlinewidth
+stroke
+thinline setlinewidth
+newpath
+90 10 170 {
+0 0 moveto
+dup 5 add
+0 0 300 
+5 -2 roll
+arc
+closepath stroke
+}for
+thickline setlinewidth
+0 0 moveto
+0 0 300 90 180 arc closepath
+stroke
+0 0 moveto
+0 0 300 15 90 arc closepath
+gsave
+clip
+.90 setgray
+fill
+grestore
+stroke
+45 0 moveto
+45 0 300 345 15 arc closepath
+gsave
+clip
+.70 setgray
+fill
+grestore
+stroke
+0 0 moveto
+0 0 300 300 345 arc closepath
+gsave
+clip
+45 rotate
+thinline setlinewidth
+0 -11.25 -310 {
+-90 exch moveto
+240 0 rlineto
+stroke
+} for
+-90 11.25 150 {
+0 moveto
+0 -300 rlineto
+stroke
+} for
+grestore
+thickline setlinewidth
+stroke
+medline setlinewidth
+2 setlinecap
+/Helvetica-Bold findfont 35 scalefont setfont
+gsave
+45 rotate
+345 0 moveto
+30 0 rlineto
+stroke
+383 0 moveto
+-45 rotate
+(21) show
+45 rotate
+0 345 moveto
+0 30 rlineto
+stroke
+0 383 moveto
+-45 rotate
+(25) dup stringwidth 
+pop -1 mul 0 rmoveto 
+show
+45 rotate
+-345 0  moveto
+-30 0 rlineto
+stroke
+-405 0 moveto
+-45 rotate
+(33) 0 -12 rmoveto 
+show
+45 rotate
+-45 rotate
+-37.5 rotate
+345 0 moveto
+30 0 rlineto
+stroke
+383 0 moveto
+37.5 rotate
+0 -30 rmoveto
+(13) show
+45 0 translate
+345 0 moveto
+30 0 rlineto
+stroke
+383 0 moveto
+0 -12 rmoveto
+(08) show
+grestore
+showpage
+(HP LaserJet IIP) product eq (HP LaserJet IIIP) product eq or
+{/Courier-Bold findfont 12 scalefont setfont
+180 734 moveto
+(- - - - - CLEANING PAPER - - - - -) show
+/Courier findfont 12 scalefont setfont
+63 690 moveto
+(For details, refer to the Maintenance Chapter in your printer manual)show
+0.5 setlinewidth
+63 687 moveto 552 687 lineto stroke
+/Helvetica findfont 9 scalefont setfont
+63 640 moveto
+(Procedure  :  (Do every time EP-L cartridge is replaced)) show
+63 622 moveto
+(1.  If optional paper cassette is installed, tray selection must be `MP
+TRAY'.) show
+63 604 moveto
+(2.  Place this page, this side up, on the top of the paper stack in the MP
+tray.) show
+63 586 moveto
+(3.  Run another test page. (Cleaning once is sufficient)) show
+24 setlinewidth
+/xpos 30 def
+/ypos 576 def
+24 {xpos ypos moveto
+0 -167 rlineto
+stroke
+/xpos xpos 24 add def
+/ypos ypos 9.2 sub def
+} repeat
+showpage} if
+(HP LaserJet IID) product eq (HP LaserJet IIID) product eq or
+{resetduplextrue setduplexmode} if

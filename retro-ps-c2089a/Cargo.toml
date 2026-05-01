@@ -1,0 +1,15 @@
+[package]
+name = "retro-ps-c2089a"
+version = "0.1.0"
+edition.workspace = true
+
+[lib]
+name = "retro_ps_c2089a"
+path = "src/lib.rs"
+
+[dependencies]
+m68k = "0.1.4"
+png = { version = "0.17", default-features = false }
+
+[dev-dependencies]
+crc32fast = "1"

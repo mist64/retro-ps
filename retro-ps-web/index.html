@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>retro-ps — C2089A PostScript cartridge emulator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="static/app.css">
+</head>
+<body>
+<header class="topbar">
+  <h1><a href="https://github.com/mist64/retro-ps">retro-ps</a> <span class="sub">— C2089A PostScript cartridge emulator</span></h1>
+  <button id="print" class="ghost-btn" type="button" disabled
+          title="Print one page per rendered page">Print</button>
+  <div class="status" id="status">loading wasm...</div>
+</header>
+
+<main class="layout">
+  <aside class="sidebar">
+    <section class="dropzone-wrap">
+      <div class="tab-bar" role="tablist">
+        <button id="tab-drop"   class="tab active" type="button" role="tab"
+                aria-selected="true">File</button>
+        <button id="tab-paste"  class="tab" type="button" role="tab"
+                aria-selected="false">Code</button>
+        <button id="tab-sample" class="tab" type="button" role="tab"
+                aria-selected="false">Sample</button>
+      </div>
+
+      <div id="panel-drop" class="tab-panel">
+        <div id="dropzone" class="dropzone" tabindex="0">
+          <div class="dz-inner">
+            <div class="dz-icon">PS</div>
+            <div class="dz-text">Drop a <code>.ps</code> file here</div>
+            <div class="dz-text small">or click to choose</div>
+          </div>
+          <input type="file" id="file-input" accept=".ps,application/postscript" hidden>
+        </div>
+      </div>
+
+      <div id="panel-paste" class="tab-panel hidden">
+        <textarea id="ps-textarea" class="ps-paste"
+                  spellcheck="false" autocorrect="off"
+                  autocapitalize="off">/Helvetica findfont 48 scalefont setfont
+72 600 moveto
+(Hello, world!) show
+showpage
+</textarea>
+        <button id="paste-render" class="ghost-btn block-btn" type="button">Render</button>
+      </div>
+
+      <div id="panel-sample" class="tab-panel hidden">
+        <button class="ghost-btn block-btn" type="button"
+                data-sample="startup_page.ps">Startup page</button>
+        <button class="ghost-btn block-btn" type="button"
+                data-sample="test_page.ps">Test page</button>
+        <button class="ghost-btn block-btn" type="button"
+                data-sample="fontpage.ps">Font page</button>
+        <button class="ghost-btn block-btn" type="button"
+                data-sample="font_chart.ps">Font chart (35 pages)</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <h2>Render options</h2>
+
+      <label class="ctl">
+        <span>DPI</span>
+        <select id="dpi">
+          <option value="72">72</option>
+          <option value="150">150</option>
+          <option value="300" selected>300</option>
+          <option value="600">600</option>
+          <option value="1200">1200</option>
+        </select>
+      </label>
+
+      <label class="ctl">
+        <span>Paper</span>
+        <select id="paper">
+          <option value="auto" selected>Autodetect</option>
+          <option value="612x792">Letter (8.5 x 11)</option>
+          <option value="595x842">A4</option>
+          <option value="612x1008">Legal (8.5 x 14)</option>
+          <option value="custom">Custom...</option>
+        </select>
+      </label>
+
+      <div class="ctl ctl-row hidden" id="custom-paper">
+        <input type="number" id="paper-w" placeholder="W (pt)" min="72" max="6000" value="612">
+        <span>x</span>
+        <input type="number" id="paper-h" placeholder="H (pt)" min="72" max="6000" value="792">
+      </div>
+
+    </section>
+
+    <section class="page-list">
+      <h2>Pages</h2>
+      <ol id="page-index"></ol>
+    </section>
+
+    <section id="log-panel" class="log-panel collapsed">
+      <button id="log-toggle" class="log-header" type="button"
+              aria-expanded="false" aria-controls="log">
+        <span class="log-title">Log</span>
+        <span class="log-chevron" aria-hidden="true">▴</span>
+      </button>
+      <pre id="log"></pre>
+    </section>
+  </aside>
+
+  <section class="viewer" id="viewer">
+    <div class="empty" id="empty-state">
+      <p>Adobe's reference PostScript Level 2 interpreter, version <code>2010.118</code> (the firmware HP shipped in the 1991 LaserJet II/III PostScript cartridge), running in your browser via M68K emulation in WebAssembly.</p>
+      <p>Drop a PostScript file in the panel on the left.</p>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="static/app.js"></script>
+</body>
+</html>

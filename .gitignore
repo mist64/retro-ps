@@ -1,0 +1,4 @@
+target/
+retro-ps-web/pkg/
+.DS_Store
+retro-ps-web/deploy.sh

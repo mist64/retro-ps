@@ -1,0 +1,10 @@
+[workspace]
+members = ["retro-ps-c2089a", "retro-ps-cli", "retro-ps-wasm"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+
+[profile.release]
+opt-level = 3
+lto = "thin"

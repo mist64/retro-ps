@@ -1,0 +1,506 @@
+%!
+% STARTUP PAGE
+currentpagedevice /Duplex get dup /resetduplextrue exch def
+{ <</Duplex false>> setpagedevice } if/D{def}bind def
+/BD {bind def} D
+/ED{exch D}BD
+/GS{gsave}BD
+/GR{grestore}BD
+/lw 575.76 D
+/lh 762.96 D
+/oshow {false charpath GS .7 setgray fill GR} BD
+/trademark {/1string 1 string def
+1string 0 212 put 1string} BD
+/PI16 /Palatino-Italic findfont 16 scalefont def
+/PR18 /Palatino-Roman findfont 18 scalefont def
+/showRET { PI16 setfont
+0 9 rmoveto 
+(with ) show
+/ZapfChancery-MediumItalic findfont 27 scalefont setfont
+.25 setlinewidth
+0 setgray
+0 -9 rmoveto
+(Resolution Enhancement technology) show} BD
+/showATM { PR18 setfont
+-15 0 rmoveto
+(Level 2 PostScript) show
+1 10 rmoveto /Symbol findfont 8 scalefont setfont (Ò) show
+0 -10 rmoveto
+PI16 setfont
+0 7 rmoveto 
+( with ) show
+PR18 setfont
+0 -7 rmoveto
+(ATM)show
+/Symbol findfont 12 scalefont setfont
+0 6 rmoveto trademark show 0 -6 rmoveto
+PR18 setfont
+( Type Rendering Technology) show} BD
+GS clippath pathbbox GR
+4 1 roll  3 -1 roll
+sub/fw ED sub/fh ED
+/rx fw lw div D/ry fh lh div D
+rx ry le {rx}{ry}ifelse/sf ED
+rx ry le{fh lh}{fw lw}ifelse
+sf mul sub dup 0 gt{0 rx ry le{exch}if translate}{pop}ifelse
+sf dup scale
+20 sf div dup translate
+% setup the name of the printer
+product
+/printeris product D
+0 20 translate
+.995 setgray
+0 0 moveto
+0 720 rlineto
+562 0 rlineto
+0 -720 rlineto
+closepath
+clip
+fill GS
+% start of postscript cartridge title
+/Times-Bold findfont 42 scalefont setfont
+.5 setlinewidth
+0 setgray
+34.4 72 translate
+0 0 moveto
+(PostScript* Cartridge Plus) show
+% end of postscript cartridge title
+%Start of ATM
+20 -35 moveto
+showATM
+stroke GR
+%End of ATM
+% start of picture box
+GS % save page layout
+% first do shadow
+36 288 translate
+1.2 1.2 scale
+-15 rotate
+newpath
+-6 -15 moveto
+0 350 rlineto
+350 0 rlineto
+0 -350 rlineto
+closepath
+.6 setgray
+fill
+% end of shadow
+% start of box
+0 0 moveto
+0 350 rlineto
+350 0 rlineto
+0 -350 rlineto
+closepath
+GS % so that path does not get erased during fill
+1 setgray
+fill
+GR % restore for box path
+.5 setlinewidth
+0 setgray
+stroke
+% end of box
+GS % save picture box
+% start of HP LOGO
+17 312 translate
+.17 .17 scale
+newpath % left-half of cats-eye
+0 71 moveto
+0 142 92 142 14.625 arcto
+4 {pop} repeat
+92 142 lineto
+115 71 64 115 250 arc 
+90 0 lineto
+0 0 0 71 14.625 arcto
+4 {pop} repeat
+closepath fill
+% end of left half of HP LOGO
+newpath % letter H
+65 43 moveto
+100 142 lineto
+116 142 lineto
+101 98 112 98 2.25 arcto
+112 98 lineto
+124 98 104 43 6.75 arcto
+104 43 lineto
+88 43 lineto
+105 90 98 90 2.25 arcto
+98 90 81 43 2.25 arcto
+81 43 lineto
+closepath fill
+% letter P outer
+99 0 moveto
+134 98 lineto
+171 98 152 43 6.75 arcto
+152 43 139 43 6.75 arcto
+130 43 115 0 2.25 arcto
+115 0 lineto
+99 0 lineto
+fill
+% letter P interior
+133.65 52.25 moveto
+147 90 154 90 2.25 arcto
+154 90 140 50 2.25 arcto
+140 50 133 50 2.25 arcto
+133 50 133.65 52.25 2.25 arcto
+closepath
+1 setgray
+fill
+0 setgray
+% right-half of cats-eye
+124 0 moveto
+127 8 lineto
+115 71 64 281 84 arc
+125 142 lineto
+230 142 230 0 14.625 arcto
+230 0 122 0 14.625 arcto
+closepath
+fill
+% letter H
+281 82 moveto
+281 142 lineto
+293 142 lineto
+293 119 324 119 2.25 arcto
+324 119 324 142 2.25 arcto
+324 142 lineto
+336 142 lineto
+336 82 lineto
+324 82 lineto
+324 107 293 107 2.25 arcto
+293 107 293 82 
+2.25 arcto
+293 82 lineto
+closepath
+fill
+% letter E
+348 88.75 moveto
+348 142 398 142 6.75 arcto
+398 142 lineto
+398 130 lineto
+360 130 360 118 2.25 arcto
+360 118 394 118 2.25 arcto
+394 118 lineto
+394 106 lineto
+360 106 360 94 2.25 arcto
+360 94 402 94 2.25 arcto
+402 94 lineto
+402 82 lineto
+348 82 348 88.75 6.75 arcto
+closepath
+fill
+% letter W
+409 142 moveto
+421 142 lineto
+432 105 lineto
+443 142 lineto
+457 142 lineto
+468 105 lineto
+479 142 lineto
+491 142 lineto
+475 82 lineto
+462 82 450 119 6.75 arcto
+450 119 lineto
+439 82 lineto
+426 82 409 142 6.75 arcto
+closepath
+fill
+% letter L
+501 142 moveto
+513 142 lineto
+513 94 lineto
+549 94 lineto
+549 82 lineto
+501 82 501 142 6.75 arcto
+closepath
+fill
+% letter E
+558 88.75 moveto
+558 142 608 142 6.75 arcto
+608 142 lineto
+608 130 lineto
+570 130 570 118 2.25 arcto
+570 118 604 118 2.25 arcto
+604 118 lineto
+604 106 lineto
+570 106 570 94 2.25 arcto
+570 94 612 94 2.25 arcto
+612 94 lineto
+612 82 lineto
+558 82 558 88.75 6.75 arcto
+closepath
+fill
+% letter T
+614 142 moveto
+664 142 lineto
+664 130 lineto
+645 130 lineto
+645 82 lineto
+633 82 lineto
+633 130 lineto
+614 130 lineto
+closepath
+fill
+% letter T
+673 142 moveto
+723 142 lineto
+723 130 lineto
+704 130 lineto
+704 82 lineto
+692 82 lineto
+692 130 lineto
+673 130 lineto
+closepath
+fill
+% letter P outer
+281 0 moveto
+281 54 lineto
+333 54 333 16 19 arcto
+333 16 293 16 19 arcto
+293 16 lineto
+293 0 lineto
+closepath
+fill
+% letter P inner
+293 27 moveto
+293 43 lineto
+322 43 322 35 8 arcto
+322 27 293 27 8 arcto
+closepath
+1 setgray
+fill
+0 setgray
+% letter A outer
+334 0 moveto
+358 54 lineto
+375 54 398 0 6.75 arcto
+398 0 lineto
+386 0 lineto
+382 9 lineto
+350 9 lineto
+346 0 lineto
+closepath
+fill
+% letter A inner
+354.9 20 moveto
+366.5 46.1 lineto
+377.1 20 lineto
+closepath
+1 setgray
+fill
+0 setgray
+% letter C
+420 0 moveto
+396 -2 396 56 420 54 curveto
+457 54 457 36 12 arcto
+457 36 lineto
+446 36 lineto
+446 44 418 44 7 arcto
+414 44 414 10 7 arcto
+414 10 446 10 7 arcto
+446 10 446 18 7 arcto
+446 18 lineto
+457 18 lineto
+457 0 448 0 12 arcto
+closepath
+fill
+% letter K
+471 0 moveto
+471 54 lineto
+483 54 lineto
+483 34 lineto
+493 34 lineto
+513 54 lineto
+527 54 lineto
+502 28 lineto
+523 5 lineto
+523 0 lineto
+513 0 lineto
+490 22 lineto
+483 22 lineto
+483 0 lineto
+closepath
+fill
+newpath % letter A outer
+529 0 moveto
+529 5 lineto
+552 54 lineto
+569 54 592 0 6.75 arcto
+592 0 lineto
+580 0 lineto
+576 9 lineto
+544 9 lineto
+540 0 lineto
+closepath
+fill
+% letter A inner
+548.9 20 moveto
+560.5 46.1 lineto
+571.1 20 lineto
+closepath
+1 setgray
+fill
+0 setgray
+% letter R outer
+598 0 moveto
+598 54 lineto
+652 54 652 34 20 arcto
+652 14 610 14 20 arcto
+610 14 lineto
+610 0 lineto
+closepath
+fill
+% letter R leg
+638 0 moveto
+638 14 610 14 8 arcto
+630 26 lineto
+650 26 650 0 20 arcto
+650 0 lineto
+closepath
+fill
+% letter R inner
+610 26 moveto
+610 42 lineto
+640 42 640 34 8 arcto
+640 26 610 26 8 arcto
+closepath
+1 setgray 
+fill
+0 setgray
+% letter D outer
+666 0 moveto
+666 54 lineto
+722 54 722 0 12 arcto
+722 0 666 0 12 arcto
+closepath
+fill
+% letter D inner
+678 11 moveto
+678 43 lineto
+710 43 710 11 8 arcto
+710 11 678 11 8 arcto
+closepath
+1 setgray
+fill
+GR % back to picture box
+% Start of PostScript Logo
+GS % picture box
+0 setgray
+270 11 translate
+.4 .4 scale
+0 0 moveto
+/Helvetica findfont 14.5 scalefont setfont
+(Software From Adobe) show
+0 13 moveto
+/TR25 /Times-Roman findfont 25 scalefont dup setfont def
+(P) show
+/TR22 /Times-Roman findfont 22 scalefont dup setfont def
+(OST) show
+TR25 setfont (S) show TR22 setfont (CRIPT) show
+1 10 rmoveto /Symbol findfont 8 scalefont setfont (Ò) 
+show
+0 40 translate
+.1 .1 scale
+809 1264 moveto
+851 1252 871 1242 895 1225 curveto
+434 688 lineto
+558 604 691 400 617 236 curveto
+654 459 420 629 281 649 curveto
+444 16 moveto
+529 13 615 11 703 6 curveto
+898 11 1084 20 1260 35 curveto
+1322 43 1374 93 1385 160 curveto
+1396 275 1403 397 1404 524 curveto
+1403 647 1396 769 1385 889 curveto
+1374 951 1322 1001 1260 1004 curveto
+1182 1015 1104 1021 1020 1024 curveto
+1020 1024 692 306 655 236 curveto
+609 123 541 43 444 16 curveto
+156 35 moveto
+87 47 37 84 31 160 curveto
+14 275 7 397 2 524 curveto
+7 647 14 769 31 889 curveto
+36 951 88 1001 156 1004 curveto
+241 1016 334 1023 425 1024 curveto
+598 1216 lineto
+597 1216 638 1224 674 1216 curveto
+79 524 lineto
+211 589 586 494 588 275 curveto
+586 34 328 8 156 35 curveto
+fill
+GR % back to picture box
+% start of product name 
+GS % save picture box
+37.5 15 translate
+41.2 rotate
+.83 .83 scale
+49 56 moveto
+PI16 setfont
+(The HP) show
+/Palatino-BoldItalic findfont 98 scalefont setfont
+newpath
+1 setlinewidth
+0 setgray
+0 0 moveto (L) show
+-6 0 rmoveto (a) show
+-5 0 rmoveto (s) show
+-5 0 rmoveto (e) show
+-2 0 rmoveto (r) show
+-12 0 rmoveto (J) show
+-13 0 rmoveto (e) show
+-4 0 rmoveto (t) show
+-6 0 rmoveto ( ) show
+-5 0 rmoveto (I) show
+-4 0 rmoveto (I) show
+printeris
+(HP LaserJet IID)
+eq
+{-1 0 rmoveto (D) show}
+{printeris
+(HP LaserJet IIP)
+eq
+{-1 0 rmoveto (P) show}
+{printeris
+(HP LaserJet III)
+eq
+{-4 0 rmoveto (I) show
+33 -45 moveto showRET}
+{printeris
+(HP LaserJet IIID)
+eq
+{-4 0 rmoveto (ID) show 
+33 -45 moveto showRET}
+{printeris
+(HP LaserJet IIIP)
+eq
+{-4 0 rmoveto (IP) show 
+33 -45 moveto showRET}
+{-1 0 rmoveto (x) show}
+ifelse} ifelse} ifelse} ifelse} ifelse
+stroke
+232 -18 moveto
+PI16 setfont
+(Printer) show
+% end of product name
+GR % back to picture box
+GR % back to page
+% start of page outside border
+0 setgray
+newpath
+0 0 moveto
+0 720 rlineto
+562 0 rlineto
+0 -720 rlineto
+closepath
+.5 setlinewidth
+stroke
+% end of outside box
+% start of copyright statements
+281 10 moveto
+/Helvetica findfont 5.5 scalefont setfont
+0 2 rmoveto (*) show 0 -2 rmoveto
+(Adobe, PostScript and the PostScript Logo are registered) show
+( trademarks of Adobe Systems Incorporated) show
+284 3 moveto 
+(in the U.S. and other countries.  ATM is a trademark of Adobe) show
+( Systems Incorporated.) show
+showpage
+resetduplextrue {<</Duplex true>> setpagedevice} if

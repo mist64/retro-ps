@@ -1,0 +1,56 @@
+%!PS
+% Font chart: one page per font variant. Each page shows the font name
+% as a header, then rows at 8 pt, 9 pt, ..., 28 pt. Each row contains
+% all printable ASCII (0x20..0x7E).
+%
+% Visual smoke test for font availability + cart rendering across the
+% Adobe Standard 35 PostScript fonts.
+
+/fonts [
+    /AvantGarde-Book /AvantGarde-BookOblique
+    /AvantGarde-Demi /AvantGarde-DemiOblique
+    /Bookman-Demi /Bookman-DemiItalic
+    /Bookman-Light /Bookman-LightItalic
+    /Courier /Courier-Bold /Courier-BoldOblique /Courier-Oblique
+    /Helvetica /Helvetica-Bold /Helvetica-BoldOblique /Helvetica-Oblique
+    /Helvetica-Narrow /Helvetica-Narrow-Bold
+    /Helvetica-Narrow-BoldOblique /Helvetica-Narrow-Oblique
+    /NewCenturySchlbk-Bold /NewCenturySchlbk-BoldItalic
+    /NewCenturySchlbk-Italic /NewCenturySchlbk-Roman
+    /Palatino-Bold /Palatino-BoldItalic
+    /Palatino-Italic /Palatino-Roman
+    /Symbol
+    /Times-Bold /Times-BoldItalic /Times-Italic /Times-Roman
+    /ZapfChancery-MediumItalic
+    /ZapfDingbats
+] def
+
+/page_h 792 def
+/margin 18 def
+/header_size 14 def
+
+/ascii_string 95 string def
+0 1 94 { /i exch def ascii_string i i 32 add put } for
+
+/render_page {
+    /name exch def
+
+    /Helvetica findfont header_size scalefont setfont
+    margin page_h margin sub header_size sub moveto
+    name 50 string cvs show
+
+    /y page_h margin sub header_size sub header_size sub def
+    /sz 8 def
+    {
+        name findfont sz scalefont setfont
+        margin y moveto
+        ascii_string show
+        /y y sz 1.2 mul sub def
+        /sz sz 1 add def
+        sz 28 gt { exit } if
+    } loop
+
+    showpage
+} bind def
+
+fonts { render_page } forall
